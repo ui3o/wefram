@@ -6,9 +6,10 @@ const result = Bowser.getParser(window.navigator.userAgent);
 
 export default function App() {
   const toast = useToast();
+  result.getUA()
   toast({
     title: `Your operation system is ${result.getOSName()}`,
-    description: `You are using ${result.getBrowserName()} with version ${result.getBrowserVersion()}`,
+    description: `You are using ${result.getBrowserName()} with version ${result.getBrowserVersion()} and ua is: ${result.getUA()}`,
     status: "error",
     duration: 9000,
     isClosable: false,
